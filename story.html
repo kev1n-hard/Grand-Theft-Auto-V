@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Theft Auto V - Câu chuyện</title>
+    <link rel="stylesheet" href="styleStory.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="rockstar-logo">R★</span>
+                <span class="game-title">GRAND THEFT AUTO V</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Tổng quan</a>
+                <a href="story.html" class="active">Câu chuyện</a>
+                <a href="https://www.rockstargames.com/gta-online" target="_blank">GTA Online</a>
+                <a href="register.html" class="buy-btn-nav">Mua ngay</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Story Hero Section -->
+    <section class="story-hero">
+        <div class="story-hero-content">
+            <h1 class="main-title">BA SỐ PHẬN.<br>MỘT THÀNH PHỐ.</h1>
+            <p class="description">Khám phá câu chuyện đan xen của ba nhân vật chính trong thế giới ngầm đầy rẫy hiểm nguy của Los Santos và Blaine County.</p>
+        </div>
+    </section>
+
+    <!-- Character Bios Section -->
+    <section class="characters-bio-section container">
+        <div class="bio-list">
+            
+            <!-- Michael -->
+            <div class="bio-card">
+                <div class="bio-image">
+                    <img src="Index Images/Michael artwork.png" alt="Michael De Santa">
+                </div>
+                <div class="bio-content">
+                    <h2 class="char-name">MICHAEL</h2>
+                    <p class="char-desc">Một cựu tên cướp ngân hàng chuyên nghiệp đã giải nghệ, hiện đang sống trong nhung lụa tại Vinewood nhờ một thỏa thuận ngầm với chính phủ.</p>
+                    
+                    <!-- Phần mở rộng -->
+                    <div class="story-extend">
+                        <button class="extend-btn" onclick="toggleStory(this)">
+                            Cốt truyện chi tiết <span class="arrow">▼</span>
+                        </button>
+                        <div class="extend-content">
+                            <p>Đằng sau vỏ bọc giàu có là một cuộc sống gia đình rạn nứt và bế tắc. Tuy nhiên, mọi thứ thay đổi khi người bạn cũ tâm thần của hắn bất ngờ xuất hiện từ hư không, dằn vặt hắn về những sai lầm hơn một thập kỷ trước. Bị cuốn trở lại thế giới ngầm tàn nhẫn, Michael buộc phải thiết lập những phi vụ sinh tử mới để tồn tại, đồng thời đối mặt với cái giá của sự phản bội.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- Franklin -->
+            <div class="bio-card reverse">
+                <div class="bio-content">
+                    <h2 class="char-name">FRANKLIN</h2>
+                    <p class="char-desc">Một gã giang hồ trẻ tuổi đầu đường xó chợ, luôn khao khát thoát khỏi cuộc sống băng đảng nhỏ lẻ và những phi vụ đòi nợ thuê lặt vặt.</p>
+                    
+                    <!-- Phần mở rộng -->
+                    <div class="story-extend">
+                        <button class="extend-btn" onclick="toggleStory(this)">
+                            Cốt truyện chi tiết <span class="arrow">▼</span>
+                        </button>
+                        <div class="extend-content">
+                            <p>Với kỹ năng lái xe thượng thừa và sự nhạy bén hiếm có, Franklin không muốn mãi dậm chân tại chỗ. Cuộc gặp gỡ tình cờ với Michael đã mở ra cho anh một cơ hội đổi đời, nhưng cũng đồng thời ném anh vào vòng xoáy của những âm mưu đáng sợ nhất thế giới ngầm. Anh trở thành mảnh ghép lý tưởng để hiện thực hóa những vụ cướp thế kỷ.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="bio-image">
+                    <img src="Index Images/Franklin artwork.png" alt="Franklin Clinton">
+                </div>
+            </div>
+
+            <!-- Trevor -->
+            <div class="bio-card">
+                <div class="bio-image">
+                    <img src="Index Images/Trevor artwork.png" alt="Trevor Philips">
+                </div>
+                <div class="bio-content">
+                    <h2 class="char-name">TREVOR</h2>
+                    <p class="char-desc">Một kẻ tâm thần bạo lực và khó lường, từng là phi công quân sự. Trevor đang điều hành một đế chế ma túy nhỏ lẻ ở vùng hoang mạc Blaine County.</p>
+                    
+                    <!-- Phần mở rộng -->
+                    <div class="story-extend">
+                        <button class="extend-btn" onclick="toggleStory(this)">
+                            Cốt truyện chi tiết <span class="arrow">▼</span>
+                        </button>
+                        <div class="extend-content">
+                            <p>Không ai có thể kiểm soát được Trevor. Sống không theo bất kỳ quy tắc nào và luôn sẵn sàng bùng nổ, hắn là hiện thân của sự hỗn loạn nguyên thủy. Việc phát hiện ra người chiến hữu cũ Michael vẫn còn sống sau một vụ cướp thất bại năm xưa đã thổi bùng cơn thịnh nộ trong Trevor, kéo hắn tới Los Santos để tính những món nợ máu chưa phai.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">R★ ROCKSTAR GAMES</div>
+            <div class="footer-links">
+                <a href="https://www.rockstargames.com/contact" target="_blank">Liên hệ</a>
+                <a href="https://www.rockstargames.com/privacy" target="_blank">Bảo mật</a>
+                <a href="https://www.rockstargames.com/legal" target="_blank">Điều khoản</a>
+                <a href="sinhVien.html">Trang sinh viên</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script điều khiển hiệu ứng mở rộng -->
+    <script>
+        function toggleStory(button) {
+            // Lấy khối nội dung ngay sau nút bấm
+            var content = button.nextElementSibling;
+            
+            // Toggle class 'active' cho nút bấm để xoay mũi tên
+            button.classList.toggle("active");
+            
+            // Xử lý hiệu ứng mở/đóng mượt mà dựa vào chiều cao (scrollHeight)
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null; // Đóng lại
+                content.style.opacity = 0;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px"; // Mở ra
+                content.style.opacity = 1;
+            }
+        }
+    </script>
+
+</body>
+</html>

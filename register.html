@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Theft Auto V - Đăng ký</title>
+    <link rel="stylesheet" href="styleRegister.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="rockstar-logo">R★</span>
+                <span class="game-title">GRAND THEFT AUTO V</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Tổng quan</a>
+                <a href="story.html">Câu chuyện</a>
+                <a href="https://www.rockstargames.com/gta-online" target="_blank">GTA Online</a>
+                <a href="register.html" class="buy-btn-nav active">Mua ngay</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Register Form Section -->
+    <section class="register-section">
+        <div class="register-container">
+            <div class="form-header">
+                <h2>LOS SANTOS<br>ĐANG GỌI TÊN BẠN.</h2>
+                <p>Đăng ký tài khoản Social Club để gia nhập thế giới ngầm.</p>
+            </div>
+            
+            <form id="registerForm" novalidate>
+                <!-- Username -->
+                <div class="input-group">
+                    <label for="username">Tên đăng nhập</label>
+                    <input type="text" id="username" class="form-control" placeholder="Nhập tên đăng nhập của bạn">
+                    <span class="error-text" id="usernameError">Vui lòng nhập tên đăng nhập.</span>
+                </div>
+
+                <!-- Email -->
+                <div class="input-group">
+                    <label for="email">Địa chỉ Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="ví dụ: franklin@lossantos.com">
+                    <span class="error-text" id="emailError">Email không hợp lệ. Vui lòng kiểm tra lại.</span>
+                </div>
+
+                <!-- Password -->
+                <div class="input-group">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" class="form-control" placeholder="Tối thiểu 6 ký tự">
+                    <span class="error-text" id="passwordError">Mật khẩu quá ngắn (tối thiểu 6 ký tự).</span>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="input-group">
+                    <label for="confirmPassword">Xác nhận mật khẩu</label>
+                    <input type="password" id="confirmPassword" class="form-control" placeholder="Nhập lại mật khẩu">
+                    <span class="error-text" id="confirmPasswordError">Mật khẩu xác nhận không khớp.</span>
+                </div>
+
+                <button type="submit" class="btn btn-primary submit-btn">Đăng ký ngay</button>
+                
+                <div class="form-footer">
+                    <p>Đã có tài khoản? <a href="#">Đăng nhập tại đây</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">R★ ROCKSTAR GAMES</div>
+            <div class="footer-links">
+                <a href="https://www.rockstargames.com/contact">Liên hệ</a>
+                <a href="https://www.rockstargames.com/privacy">Bảo mật</a>
+                <a href="https://www.rockstargames.com/legal">Điều khoản</a>
+                <a href="sinhVien.html">Trang sinh viên</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Validation -->
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            // Ngăn chặn form gửi đi mặc định để kiểm tra lỗi
+            event.preventDefault();
+            
+            let isValid = true;
+
+            // Lấy các phần tử input
+            const username = document.getElementById('username');
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirmPassword');
+
+            // Reset toàn bộ thông báo lỗi và viền đỏ trước khi kiểm tra lại
+            document.querySelectorAll('.error-text').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.form-control').forEach(el => el.classList.remove('error'));
+
+            // Hàm hỗ trợ hiển thị lỗi
+            const showError = (inputElement, errorId) => {
+                inputElement.classList.add('error');
+                document.getElementById(errorId).style.display = 'block';
+                isValid = false;
+            };
+
+            // 1. Kiểm tra Username (Không được để trống)
+            if (username.value.trim() === '') {
+                showError(username, 'usernameError');
+            }
+
+            // 2. Kiểm tra Email (Dùng Regex để check định dạng)
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                showError(email, 'emailError');
+            }
+
+            // 3. Kiểm tra Mật khẩu (Tối thiểu 6 ký tự)
+            if (password.value.length < 6) {
+                showError(password, 'passwordError');
+            }
+
+            // 4. Kiểm tra Xác nhận mật khẩu (Phải khớp với mật khẩu ở trên)
+            if (confirmPassword.value === '' || confirmPassword.value !== password.value) {
+                showError(confirmPassword, 'confirmPasswordError');
+            }
+
+            // Nếu không có lỗi nào, hiển thị thông báo thành công
+            if (isValid) {
+                alert('Đăng ký thành công! Chào mừng bạn đến với Los Santos.');
+                // Ở dự án thực tế, đây là lúc gọi: this.submit();
+            }
+        });
+    </script>
+</body>
+</html>

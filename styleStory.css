@@ -1,0 +1,261 @@
+/* Thiết lập chung */
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #0b0b0b;
+    --text-color: #ffffff;
+    --neon-green: #ccff00;
+    --gray-text: #a0a0a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Thanh điều hướng (Navbar) */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid #222;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.rockstar-logo {
+    color: #ff9900;
+    font-size: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--neon-green);
+}
+
+.buy-btn-nav {
+    background-color: var(--neon-green);
+    color: #000 !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+/* Story Hero Section */
+.story-hero {
+    height: 60vh;
+    background: linear-gradient(rgba(11,11,11,0.5), rgba(11,11,11,1)), url('https://images.unsplash.com/photo-1605901309584-818e25960b8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+    padding: 0 20px;
+}
+
+.story-hero-content {
+    max-width: 800px;
+}
+
+.story-hero .main-title {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.story-hero .description {
+    color: var(--gray-text);
+    font-size: 1.2rem;
+}
+
+/* Character Bios Section */
+.characters-bio-section {
+    padding: 60px 20px 100px;
+}
+
+.bio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.bio-card {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background-color: #151515;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: all 0.4s ease;
+}
+
+/* Hiệu ứng nổi và bóng đổ */
+.bio-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(204, 255, 0, 0.5);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 0 0 30px rgba(204, 255, 0, 0.15);
+}
+
+.bio-image {
+    flex: 1;
+}
+
+.bio-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.bio-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.char-name {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--neon-green);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.char-desc {
+    color: var(--gray-text);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Phần mở rộng chi tiết (Dropdown List mượt mà) */
+.story-extend {
+    margin-top: 25px;
+}
+
+.extend-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    color: var(--neon-green);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    border: 1px solid var(--neon-green);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.extend-btn:hover {
+    background-color: rgba(204, 255, 0, 0.1);
+    box-shadow: 0 0 10px rgba(204, 255, 0, 0.2);
+}
+
+.arrow {
+    font-size: 0.8rem;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Xoay mũi tên khi nút có class active */
+.extend-btn.active .arrow {
+    transform: rotate(180deg);
+}
+
+.extend-content {
+    /* Quan trọng: maxHeight = 0 để giấu nội dung */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.4s ease-in-out;
+}
+
+.extend-content p {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #333;
+    color: #dedede;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* Đảo ngược bố cục cho thẻ ở giữa (Franklin) */
+.bio-card.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid #222;
+    padding: 40px 0;
+    background-color: #000;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    color: var(--gray-text);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--neon-green);
+}

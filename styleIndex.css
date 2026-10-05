@@ -1,0 +1,407 @@
+/* Thiết lập chung */
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    --bg-color: #0b0b0b;
+    --text-color: #ffffff;
+    --neon-green: #ccff00;
+    --gray-text: #a0a0a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Nút bấm (Buttons) */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background-color: var(--neon-green);
+    color: #000;
+}
+
+.btn-primary:hover {
+    background-color: #b3e600;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+/* Thanh điều hướng (Navbar) */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid #222;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.rockstar-logo {
+    color: #ff9900;
+    font-size: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--neon-green);
+}
+
+.buy-btn-nav {
+    background-color: var(--neon-green);
+    color: #000 !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(11,11,11,1)), url('https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    margin-top: 60px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.subtitle {
+    color: var(--neon-green);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.main-title {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.description {
+    color: var(--gray-text);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Thành phố - Ba số phận */
+.fate-section {
+    padding: 80px 20px;
+}
+
+.fate-grid {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background-color: #151515;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.fate-content h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.fate-content p {
+    color: var(--gray-text);
+}
+
+/* Nhân vật (Characters) */
+.characters-section {
+    padding: 60px 20px;
+}
+
+.characters-section h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.character-card {
+    background-color: #151515;
+    padding-bottom: 20px;
+}
+
+.character-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.character-card h3 {
+    padding-left: 20px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+/* Thành phố không ngủ */
+.city-sleeps-section {
+    padding: 80px 0;
+    background: linear-gradient(rgba(11,11,11,0.8), rgba(11,11,11,1)), url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+    text-align: center;
+}
+
+.city-sleeps-section h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature-item img {
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+/* Luật chơi */
+.rules-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 80px 20px;
+}
+
+.rules-content h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.rules-content ul {
+    list-style: none;
+}
+
+.rules-content ul li {
+    color: var(--gray-text);
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.rules-content ul li::before {
+    content: "■";
+    color: var(--neon-green);
+    position: absolute;
+    left: 0;
+}
+
+/* GTA Online */
+.gta-online-section {
+    padding: 100px 20px;
+    background: url('Index Images/Online artwork.png') center/cover no-repeat;
+    text-align: left;
+    position: relative;
+}
+
+.gta-online-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.gta-online-section::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(90deg, rgba(11,11,11,1) 0%, rgba(11,11,11,0.4) 100%);
+}
+
+.gta-online-section h2 {
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+
+.text-white {
+    color: #fff;
+}
+
+/* Trailer */
+.trailer-section {
+    padding: 80px 20px;
+}
+
+.trailer-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.main-trailer {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Đồng bộ Video Player với Theme */
+.custom-video {
+    display: block;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: #000;
+    
+    /* Ép trình duyệt hiển thị thanh điều khiển video màu tối */
+    color-scheme: dark; 
+    
+    /* Hiệu ứng bóng đổ màu xanh neon nhẹ */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(204, 255, 0, 0.05);
+    transition: all 0.4s ease;
+}
+
+/* Hiệu ứng bừng sáng màu neon khi trỏ chuột vào video */
+.custom-video:hover {
+    border-color: rgba(204, 255, 0, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 25px rgba(204, 255, 0, 0.2);
+    outline: none;
+}
+
+/* Tùy chỉnh thanh điều khiển riêng cho các trình duyệt lõi WebKit (Chrome, Edge, Safari) */
+video::-webkit-media-controls-panel {
+    background-color: rgba(11, 11, 11, 0.95) !important;
+}
+
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-timeline {
+    cursor: pointer;
+}
+
+/* Call to Action */
+.cta-section {
+    padding: 80px 20px;
+}
+
+.cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.cta-text h2 {
+    font-size: 2.5rem;
+}
+
+.cta-form-box {
+    background-color: #151515;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.cta-form-box h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid #222;
+    padding: 40px 0;
+    background-color: #000;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    color: var(--gray-text);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--neon-green);
+}
